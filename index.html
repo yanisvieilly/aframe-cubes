@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>aframe-cubes</title>
+    <meta name="description" content="aframe-cubes">
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
+        <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg">
+      </a-assets>
+
+      <a-sphere position="0 1.5 -7" radius="1.25" color="orange">
+        <a-animation attribute="material.color" from="orange" to="yellow" dur="3000" repeat="indefinite" direction="alternate"></a-animation>
+        <a-animation attribute="position" to="-10 11.5 -12" repeat="indefinite" dur="3000" direction="alternate"></a-animation>
+      </a-sphere>
+
+      <a-cylinder position="10 1.5 0" color="green" height="3">
+        <a-animation attribute="position" to="10 3.5 0" repeat="indefinite" dur="1500" direction="alternate"></a-animation>
+        <a-animation attribute="rotation" to="90 0 90" repeat="indefinite" dur="3000" direction="alternate"></a-animation>
+      </a-cylinder>
+
+      <a-box position="-5 5 7" color="red" scale="2 2 2">
+        <a-animation attribute="scale" to="5 5 5" repeat="indefinite" dur="750" direction="alternate"></a-animation>
+        <a-animation attribute="rotation" to="45 45 45" repeat="indefinite" dur="750" direction="alternate"></a-animation>
+        <a-animation attribute="material.color" from="red" to="purple" dur="750" repeat="indefinite" direction="alternate"></a-animation>
+      </a-box>
+
+      <!-- Background sky. -->
+      <a-sky height="2048" radius="30" src="#skyTexture" theta-length="90" width="2048"></a-sky>
+
+      <!-- Ground. -->
+      <a-circle src="#groundTexture" rotation="-90 0 0" radius="32"></a-circle>
+
+
+    </a-scene>
+  </body>
+</html>
